@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
         fontSize: 25
       },
     task: {
-        padding: 16,
+        padding: 18,
         borderColor: '#bbb',
         borderWidth: 1,
         borderStyle: 'dashed',

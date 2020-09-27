@@ -6,4 +6,5 @@ Techs notes of React Native:
 
 
 ## Misc
-Every item needs a key property. If doesn't, the keyExtractor is necessary. 
+Every item needs a key property. If doesn't,w the keyExtractor is necessary.
+Stack nav: React navigation

@@ -18,8 +18,7 @@ const styles = StyleSheet.create({
     title : {
         textAlign: 'center',
         color: '#fff',
-        fontWeight: 'bold',
         fontSize: 30,
-        fontFamily: 'Times New Roman'
+        fontFamily: 'avenirLTProRoman'
     }
 });

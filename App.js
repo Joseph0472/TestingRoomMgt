@@ -1,10 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button, TextInput, ScrollView, FlatList, TouchableOpacity } from 'react-native';
-import Header from './components/header';
-import AddInfo from './components/addinfo';
-import UpdateInfo from './components/updateinfo';
-import ShowSummary from './components/showsummary';
+import Homepage from './screens/homepage'
+import * as Font from 'expo-font';
+import { AppLoading } from 'expo';
+import { globalStyles } from './styles/global'
+import Navigator from './routes/homeStack'
+
+const getFonts = () => {
+  return Font.loadAsync({
+    'avenirLTProRoman': require('./assets/fonts/avenir-lt-55-roman.ttf')
+  })
+}
 
 export default function App() {
   const [people, setPeople] = useState([
@@ -18,51 +25,23 @@ export default function App() {
     {name: 'Mario8', id: '8'},
   ])
 
+  const [fontsLoaded, setFontsLoaded] = useState(false);
+  
+  // if(fontsLoaded) {
+  //   return (
+  //     <View style={globalStyles.container}>
+  //       <Home />
+  //     </View>
+  //   );
+  // } else {
+  //   <AppLoading 
+  //     startAsync={getFonts}
+  //     onFinish = {() => setFontsLoaded(true)}
+  //   />
+  // }
   return (
-    <View style={styles.container}>
-      <Header />
-      <AddInfo />
-      <UpdateInfo />
-      <ShowSummary />
+    <View style={globalStyles.container}>
+      <Navigator />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    // alignItems: 'center',
-    // justifyContent: 'center',
-  },
-
-  boldText: {
-    fontWeight: 'bold',
-    fontFamily: 'Times New Roman',
-    fontSize: 20
-  },
-  taskText: {
-    fontWeight: 'bold',
-    fontSize: 40
-  },
-  body: {
-    backgroundColor: '#CCCCC',
-    padding: 20
-  },
-  buttonContainer: {
-    marginTop: 20,
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: '#777',
-    padding: 10,
-    margin: 10,
-    width: 200,
-  },
-  item: {
-    marginTop: 24,
-    padding: 30,
-    backgroundColor: 'pink',
-    fontSize: 30,
-  }
-});
