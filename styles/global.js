@@ -40,5 +40,15 @@ export const globalStyles = StyleSheet.create({
         padding: 30,
         backgroundColor: 'pink',
         fontSize: 30,
-      }
+      },
+      task: {
+        padding: 18,
+        borderColor: '#bbb',
+        borderWidth: 1,
+        borderStyle: 'dashed',
+        borderRadius: 10
+    },
+    taskText: {
+      fontSize: 25
+    },
 })

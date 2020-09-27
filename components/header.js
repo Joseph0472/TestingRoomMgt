@@ -1,24 +1,31 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { StyleSheet, View, Text } from 'react-native'
 
-export default function header() {
+export default function Header() {
     return (
         <View style={styles.header}>
-            <Text style={styles.title}>Testing Room Helper</Text>
+            {/* icon here */}
+            <View>
+                <Text style={styles.headerText}>Testing Room Helper</Text>
+            </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     header: {
-        height: 70,
-        padding: 20,
-        backgroundColor : '#945FA6',
-      },
-    title : {
-        textAlign: 'center',
-        color: '#fff',
-        fontSize: 30,
-        fontFamily: 'avenirLTProRoman'
+        width: '100%',
+        height: '100%',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+
+    },
+    headerText: {
+        fontWeight: 'bold',
+        fontSize: 22,
+        color: '#945FA6',
+        letterSpacing: 1,
+        fontFamily: 'cursive'
     }
-});
+})

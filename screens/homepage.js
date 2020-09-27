@@ -1,18 +1,31 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import Header from '../components/header';
-import AddInfo from '../components/addinfo';
-import UpdateInfo from '../components/updateinfo';
-import ShowSummary from '../components/showsummary';
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import Header from '../components/homepageheader';
 import { globalStyles } from '../styles/global'
 
-export default function Homepage() {
+export default function Homepage({navigation}) {
+    console.log(navigation.navigate)
+    const pressHandler = (props) => {
+        //console.log(props)
+    }
+
     return (
         <View>
-            <Header />
-            <AddInfo />
-            <UpdateInfo />
-            <ShowSummary />
+            <TouchableOpacity onPress={() => navigation.navigate('AddInfo')}>
+                <View style={globalStyles.task}>
+                    <Text style={globalStyles.taskText}>Add Product Info</Text>
+                </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('UpdateInfo')}>
+                <View style={globalStyles.task}>
+                    <Text style={globalStyles.taskText}>Update Product Info</Text>
+                </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('ShowSummary')}>
+                <View style={globalStyles.task}>
+                    <Text style={globalStyles.taskText}>Show Summary</Text>
+                </View>
+            </TouchableOpacity>
         </View>
     )
 }
